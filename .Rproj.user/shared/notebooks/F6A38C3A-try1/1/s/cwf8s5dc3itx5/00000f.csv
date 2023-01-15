@@ -1,0 +1,4 @@
+"0","# data source"
+"0","# https://www.kaggle.com/datasets/carrie1/ecommerce-data?resource=download"
+"0","D1 <- read.csv('data/e-commerce-data.csv',"
+"0","               stringsAsFactors = FALSE)"

@@ -1,0 +1,55 @@
+library(tidyquant)
+library(tidyverse)
+library(rgdal)
+library(rvest)
+library(dplyr)
+library(leaflet)
+# library(tidyselect)
+# etf<-read.csv('country_etf.csv')
+world <-readOGR("./data/ne_50m_admin_0_countries",
+                'ne_50m_admin_0_countries', verbose = FALSE)
+
+# URL of ETF list
+etf <- read.csv("./data/ETF_list.csv")
+
+Price <- etf$ETF %>%
+    tq_get(get="stock.prices",
+           from="2018-01-01",
+           to="2018-07-31") %>%
+    group_by(symbol)
+
+gain_m <- Price%>%
+    tq_transmute(selected=adjusted,
+                 mutate_fun=periodReturn,
+                 period="monthly",
+                 col_rename="R_monthly"
+    ) %>%
+    filter(row_number()==n())
+
+gain_m$R_monthly <- gain_m$R_monthly*100
+
+gain_m <- merge(etf, gain_m, by.x='ETF', by.y='symbol')
+world_etf <- merge(world, gain_m, by.x="NAME", by.y ="Index")
+
+Popup <- paste0("<strong>Country: </strong>",
+                world_etf$NAME,
+                "<br><strong> Monthly performance: </strong>",
+                round(world_etf$R_monthly,1), "%")
+
+dom = na.omit(world_etf$R_monthly)
+a = max(abs(min(dom)), max(dom))
+monPal <- colorNumeric("RdYlGn", domain =c(-a,a), n=20)
+
+
+leaf_world_etf <- leaflet(world_etf) %>%
+    addTiles(options=tileOptions(opacity=0.6)) %>%
+    setView(lng =  20, lat =  15, zoom = 2) %>%
+    addPolygons(fillOpacity = 0.6,
+                fillColor =~monPal(R_monthly),
+                color = "white",
+                weight = 1,
+                opacity=1,
+                dashArray = "",
+                layerId = ~ETF, popup = Popup) 
+
+leaf_world_etf

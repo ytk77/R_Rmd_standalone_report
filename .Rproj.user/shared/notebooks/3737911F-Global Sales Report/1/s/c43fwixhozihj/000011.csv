@@ -1,0 +1,2 @@
+"0","v1 = round(sum(D1b$Sale)) %>% format(big.mark=',')"
+"0","valueBox(v1, icon = 'fa-money-check-dollar')"

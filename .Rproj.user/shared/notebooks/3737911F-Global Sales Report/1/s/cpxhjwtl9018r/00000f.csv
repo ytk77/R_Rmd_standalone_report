@@ -1,0 +1,8 @@
+"0","# data source"
+"0","# https://www.kaggle.com/datasets/carrie1/ecommerce-data?resource=download"
+"0","D1 <- read.csv('data/e-commerce-data.csv',"
+"0","               stringsAsFactors = FALSE)"
+"0",""
+"0","D1b <- D1 %>%"
+"0","    mutate(date = as.Date(InvoiceDate, format='%m/%d/%Y'),"
+"0","           Sale = Quantity*UnitPrice)"

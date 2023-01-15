@@ -1,0 +1,30 @@
+{
+    "id": "153DA5BE",
+    "path": "~/MyResearch/DS_portfolio/R_Rmd_standalone_report/Global Sales Report.Rmd",
+    "project_path": "Global Sales Report.Rmd",
+    "type": "r_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1673075975495.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "20,8",
+        "scrollLine": "0",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "2:0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1673749910,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1673749910283,
+    "read_only": false,
+    "read_only_alternatives": []
+}

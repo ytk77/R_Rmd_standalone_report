@@ -1,0 +1,12 @@
+"0","ggplotly(p1) %>%
+    add_trace(text = paste0(""# customer: "", S_avg$n_customer), 
+              hoverinfo = ""text"")
+"
+"2","No scatter mode specifed:
+  Setting the mode to markers
+  Read more about this attribute -> https://plotly.com/r/reference/#scatter-mode
+"
+"2","No scatter mode specifed:
+  Setting the mode to markers
+  Read more about this attribute -> https://plotly.com/r/reference/#scatter-mode
+"

@@ -1,0 +1,2 @@
+"0","v1 = sum(D1$Quantity) %>% format(big.mark=',')"
+"0","valueBox(v1)"

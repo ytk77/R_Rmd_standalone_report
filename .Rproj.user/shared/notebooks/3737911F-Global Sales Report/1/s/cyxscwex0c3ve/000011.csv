@@ -1,0 +1,2 @@
+"0","v1 = n_distinct(D1$CustomerID) %>% format(big.mark=',')"
+"0","valueBox(v1, icon = 'fa-people-group')"
