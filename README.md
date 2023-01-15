@@ -12,4 +12,4 @@ Packages in this example:
 
 -   reactable for interactive data table.
 
-Please see the result at "Global-sales-Report.html"
+Preview the [result here](https://rpubs.com/ytk77/R_Rmd_standalone_report)
